@@ -1,5 +1,5 @@
 {
-  "name": "christine",
+  "name": "christine-creates",
   "version": "1.0.0",
   "bin": {
     "christine": "index.js"
