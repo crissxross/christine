@@ -12,5 +12,11 @@
     "christine wilks",
     "christine",
     "wilks"
-  ]
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "crissxross/christine-creates",
+  "author": {
+    "name": "Christine Wilks"
+  }
 }
