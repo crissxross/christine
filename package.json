@@ -3,5 +3,8 @@
   "version": "1.0.1",
   "bin": {
     "christine-creates": "index.js"
+  },
+  "dependencies": {
+    "clear-any-console": "^1.16.2"
   }
 }
