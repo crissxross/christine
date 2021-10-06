@@ -1,6 +1,6 @@
 {
   "name": "christine-creates",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Get to know Christine via `npx christine-creates`",
   "bin": {
     "christine-creates": "index.js"
