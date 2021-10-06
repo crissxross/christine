@@ -2,6 +2,12 @@
 
 const pkgJSON = require('./package.json');
 const welcome = require('cli-welcome');
+const chalk = require('chalk');
+const log = console.log;
+const dim = chalk.dim;
+const twitterClr = chalk.hex(`#1da1f2`);
+const githubClr = chalk.hex(`#6cc644`);
+const cxClr = chalk.red;
 
 welcome({
   title: pkgJSON.name,
@@ -15,13 +21,15 @@ welcome({
 })
 
 
-console.log(`
-Christine Wilks, PhD
+log(`
+${cxClr.bold.inverse(` Christine Wilks, PhD `)}
 
-Digital writer, artist, developer and practice-based researcher. I create interactive narratives and creative web apps.
+${chalk.cyanBright(
+  `Digital writer, artist, developer and practice-based researcher. I create interactive narratives and creative web apps.`
+)}
 
-Site:    https://crissxross.net
-Twitter: https://twitter.com/crissxross
-GitHub:  https://github.com/crissxross
+${cxClr(`Site`)}:    ${dim(`https://crissxross.net`)}
+${twitterClr(`Twitter`)}: ${dim(`https://twitter.com/crissxross`)}
+${githubClr(`GitHub`)}:  ${dim(`https://github.com/crissxross`)}
 
 `);
