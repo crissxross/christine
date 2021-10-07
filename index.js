@@ -4,6 +4,7 @@ import * as fs from 'fs';
 import cliWelcome from 'cli-welcome';
 import chalk from 'chalk';
 import logSymbols from 'log-symbols';
+import cliAlerts from 'cli-alerts';
 
 const pkgJSON = JSON.parse(fs.readFileSync('./package.json'));
 const log = console.log;
@@ -49,3 +50,5 @@ ${logSymbols.info} ${info(`INFO`)}: I'm learning how to build CLI tools.
 ${logSymbols.warning} ${warning(`WARNING`)}: My CLI tools are in early development.
 ${logSymbols.error} ${error(`ERROR`)}: I'm unavailable right now. Try contacting me later.
 `);
+
+cliAlerts({type: `info`, msg: `Christine is creating an interactive narrative for Writing New Body Worlds`});
