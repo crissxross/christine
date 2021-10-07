@@ -2,23 +2,24 @@
   "name": "christine-creates",
   "version": "2.1.0",
   "description": "Get to know Christine via `npx christine-creates`",
+  "license": "MIT",
+  "repository": "crissxross/christine-creates",
+  "author": {
+    "name": "Christine Wilks"
+  },
+  "type": "module",
+  "exports": "./index.js",
   "bin": {
     "christine-creates": "index.js"
   },
   "dependencies": {
     "chalk": "^4.1.2",
     "cli-welcome": "^2.2.2",
-    "log-symbols": "^4.1.0"
+    "log-symbols": "^5.0.0"
   },
   "keywords": [
     "christine wilks",
     "christine",
     "wilks"
-  ],
-  "license": "MIT",
-  "main": "index.js",
-  "repository": "crissxross/christine-creates",
-  "author": {
-    "name": "Christine Wilks"
-  }
+  ]
 }

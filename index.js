@@ -1,30 +1,29 @@
 #!/usr/bin/env node
 
-const pkgJSON = require('./package.json');
-const welcome = require('cli-welcome');
-const chalk = require('chalk');
+import * as fs from 'fs';
+import cliWelcome from 'cli-welcome';
+import chalk from 'chalk';
+import logSymbols from 'log-symbols';
+
+const pkgJSON = JSON.parse(fs.readFileSync('./package.json'));
 const log = console.log;
 const dim = chalk.dim;
 const twitterClr = chalk.hex(`#1da1f2`);
 const githubClr = chalk.hex(`#6cc644`);
 const cxClr = chalk.red;
 
-// NOTE: log-symbols is now a pure ESM package so I intalled an earlier version 4.1.0 so I could use require as in tutorial
-// For more INFO: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
-
 // Alerts
-const sym = require('log-symbols');
 const success = chalk.green;
 const info = chalk.blue;
 const warning = chalk.keyword('orange');
 const error = chalk.redBright.bold;
 
-welcome({
+cliWelcome({
   title: pkgJSON.name,
   tagLine: `Hello!`,
   description: pkgJSON.description,
   version: pkgJSON.version,
-  bgColor: `#FADC00`,
+  bgColor: `#e3e6e8`,
 	color: `#000000`,
 	bold: true,
 	clear: true,
@@ -45,8 +44,8 @@ ${githubClr(`GitHub`)}:  ${dim(`https://github.com/crissxross`)}
 `);
 
 log(`
-${sym.success} ${success(`SUCCESS`)}: Thanks for checking out my CLI.
-${sym.info} ${info(`INFO`)}: I'm learning how to build CLI tools.
-${sym.warning} ${warning(`WARNING`)}: My CLI tools are in early development.
-${sym.error} ${error(`ERROR`)}: I'm unavailable right now. Try contacting me later.
+${logSymbols.success} ${success(`SUCCESS`)}: Thanks for checking out my CLI.
+${logSymbols.info} ${info(`INFO`)}: I'm learning how to build CLI tools.
+${logSymbols.warning} ${warning(`WARNING`)}: My CLI tools are in early development.
+${logSymbols.error} ${error(`ERROR`)}: I'm unavailable right now. Try contacting me later.
 `);
