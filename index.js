@@ -5,6 +5,7 @@ import cliWelcome from 'cli-welcome';
 import chalk from 'chalk';
 import logSymbols from 'log-symbols';
 import cliAlerts from 'cli-alerts';
+import cliCheckNode from 'cli-check-node';
 
 const pkgJSON = JSON.parse(fs.readFileSync('./package.json'));
 const log = console.log;
@@ -30,6 +31,7 @@ cliWelcome({
 	clear: true,
 });
 
+cliCheckNode('14');
 
 log(`
 ${cxClr.bold.inverse(` Christine Wilks, PhD `)}
