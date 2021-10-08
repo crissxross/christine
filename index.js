@@ -6,8 +6,10 @@ import chalk from 'chalk';
 import logSymbols from 'log-symbols';
 import cliAlerts from 'cli-alerts';
 import cliCheckNode from 'cli-check-node';
+import cliHandleUnhandled from 'cli-handle-unhandled';
 
 const pkgJSON = JSON.parse(fs.readFileSync('./package.json'));
+const unhandled = cliHandleUnhandled;
 const log = console.log;
 const dim = chalk.dim;
 const twitterClr = chalk.hex(`#1da1f2`);
@@ -19,6 +21,8 @@ const success = chalk.green;
 const info = chalk.blue;
 const warning = chalk.keyword('orange');
 const error = chalk.redBright.bold;
+
+unhandled();
 
 cliWelcome({
   title: pkgJSON.name,
@@ -32,6 +36,8 @@ cliWelcome({
 });
 
 cliCheckNode('14');
+
+Promise.reject(new Error('THIS_IS_UNHANDLED'));
 
 log(`
 ${cxClr.bold.inverse(` Christine Wilks, PhD `)}
