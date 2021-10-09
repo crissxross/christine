@@ -3,6 +3,8 @@
 import chalk from 'chalk';
 import logSymbols from 'log-symbols';
 import cliAlerts from 'cli-alerts';
+import cliHandleError from 'cli-handle-error';
+
 import { init } from './utils.js';
 
 const dim = chalk.dim;
@@ -16,10 +18,12 @@ const info = chalk.blue;
 const warning = chalk.keyword('orange');
 const error = chalk.redBright.bold;
 
-(() => {
+(async () => {
   init();
 
-  // Promise.reject(new Error('THIS_IS_UNHANDLED'));
+  const err = new Error(`Something went wrong!`);
+
+  cliHandleError(`TESTING CUSTOM ERROR`, err, true, false);
 
   console.log(`
   ${cxClr.bold.inverse(` Christine Wilks, PhD `)}
@@ -37,8 +41,7 @@ const error = chalk.redBright.bold;
   console.log(`
   ${logSymbols.success} ${success(`SUCCESS`)}: Thanks for checking out my CLI.
   ${logSymbols.info} ${info(`INFO`)}: I'm learning how to build CLI tools.
-  ${logSymbols.warning} ${warning(`WARNING`)}: My CLI tools are in early development.
-  ${logSymbols.error} ${error(`ERROR`)}: I'm unavailable right now. Try contacting me later.
+  ${logSymbols.warning} ${warning(`WARNING`)}: My CLI tools are in development & not ready for production use.
   `);
 
   cliAlerts({type: `info`, msg: `Christine is creating an interactive narrative for Writing New Body Worlds`});
