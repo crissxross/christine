@@ -20,5 +20,5 @@ export function init() {
     clear: true,
   });
 
-  cliCheckNode('14');
+  cliCheckNode('12');
 }
