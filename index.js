@@ -15,6 +15,8 @@ const flags = cli.flags;
 
 (async () => {
   init();
+  input.includes('help') && cli.showHelp(0);
+
   console.log(name);
   console.log(bio);
 
