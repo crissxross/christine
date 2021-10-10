@@ -3,9 +3,9 @@
 import chalk from 'chalk';
 import logSymbols from 'log-symbols';
 import cliAlerts from 'cli-alerts';
-import cliHandleError from 'cli-handle-error';
+// import cliHandleError from 'cli-handle-error';
 
-import { init } from './utils.js';
+import { init } from './utils/init.js';
 const args = process.argv.slice(2);
 
 const dim = chalk.dim;

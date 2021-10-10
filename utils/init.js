@@ -1,11 +1,15 @@
-import * as fs from 'fs';
+import { readFile } from 'fs/promises';
 import cliCheckNode from 'cli-check-node';
 import cliWelcome from 'cli-welcome';
 import cliHandleUnhandled from 'cli-handle-unhandled';
 
-const pkgJSON = JSON.parse(fs.readFileSync('./package.json'));
+const pkgJSON = JSON.parse(
+  await readFile(
+    new URL('./../package.json', import.meta.url)
+  )
+);
 
-export function init() {
+const init = () => {
 
   cliHandleUnhandled();
 
@@ -22,3 +26,5 @@ export function init() {
 
   cliCheckNode('12');
 }
+
+export { init };
