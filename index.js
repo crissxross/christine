@@ -7,6 +7,7 @@ import cliHandleError from 'cli-handle-error';
 import { init } from './utils/init.js';
 import { name, bio, social, ad } from './utils/data.js';
 import { cli } from './utils/cli.js';
+import { debug } from './utils/debug.js';
 
 
 const input = cli.input;
@@ -25,9 +26,8 @@ const flags = cli.flags;
     cliAlerts({type: `info`, msg: ad});
   }
 
-  cliAlerts({type: `info`, msg: `CLI DATA ↓`});
-  console.log(`input`, input);
-  console.log(`flags`, flags);
-  console.log();
+  // debug info if needed
+  debug(flags.debug, cli);
+
 })();
 

@@ -9,6 +9,7 @@ const helpText = `
     --no-social  Don't show the social info
     ad           Show the ad info
     --no-ad      Don't show the ad info
+    -d, --debug  Print debugging info
 
   Examples
   npx christine-creates --no-social
@@ -24,6 +25,11 @@ const options = {
     ad: {
       type: 'boolean',
       default: true,
+    },
+    debug: {
+      type: 'boolean',
+      default: false,
+      alias: 'd'
     },
   }
 };
