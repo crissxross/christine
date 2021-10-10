@@ -7,13 +7,13 @@ const helpText = `
     ${chalk.green(`npx christine-creates`)} ${chalk.yellow(`[--option]`)} ${chalk.cyan(`<command>`)}
 
   Options
-    ${chalk.yellow(`--bio`)}         Print the bio info
+    ${chalk.yellow(`--bio`)}         Print the bio info ${chalk.dim(`(DEFAULT: true)`)}
     ${chalk.yellow(`--no-bio`)}      Don't print the bio info
-    ${chalk.yellow(`--social`)}      Print the social info
+    ${chalk.yellow(`--social`)}      Print the social info ${chalk.dim(`(DEFAULT: true)`)}
     ${chalk.yellow(`--no-social`)}   Don't print the social info
-    ${chalk.yellow(`--ad `)}         Print the ad info
+    ${chalk.yellow(`--ad `)}         Print the ad info ${chalk.dim(`(DEFAULT: true)`)}
     ${chalk.yellow(`--no-ad`)}       Don't print the ad info
-    ${chalk.yellow(`--clear `)}      Clear the console
+    ${chalk.yellow(`--clear `)}      Clear the console ${chalk.dim(`(DEFAULT: true)`)}
     ${chalk.yellow(`--no-clear`)}    Don't clear the console
     ${chalk.yellow(`-m, --minimal`)} Print minimal info
     ${chalk.yellow(`-d, --debug`)}   Print debugging info
