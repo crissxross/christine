@@ -13,6 +13,8 @@ const helpText = `
     ${chalk.yellow(`--no-social`)}   Don't print the social info
     ${chalk.yellow(`--ad `)}         Print the ad info
     ${chalk.yellow(`--no-ad`)}       Don't print the ad info
+    ${chalk.yellow(`--clear `)}      Clear the console
+    ${chalk.yellow(`--no-clear`)}    Don't clear the console
     ${chalk.yellow(`-m, --minimal`)} Print minimal info
     ${chalk.yellow(`-d, --debug`)}   Print debugging info
     ${chalk.yellow(`-v, --version`)} Print CLI version
@@ -31,6 +33,10 @@ const options = {
     minimal: {
       type: 'boolean',
       alias: 'm',
+    },
+    clear: {
+      type: 'boolean',
+      default: true,
     },
     bio: {
       type: 'boolean',

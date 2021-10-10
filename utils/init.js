@@ -9,7 +9,7 @@ const pkgJSON = JSON.parse(
   )
 );
 
-const init = (minimal) => {
+const init = (minimal, clear) => {
 
   cliHandleUnhandled();
 
@@ -22,7 +22,7 @@ const init = (minimal) => {
       bgColor: `#e3e6e8`,
       color: `#000000`,
       bold: true,
-      clear: true,
+      clear,
     });
 
   minimal && console.log();
