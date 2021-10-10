@@ -9,20 +9,23 @@ const pkgJSON = JSON.parse(
   )
 );
 
-const init = () => {
+const init = (minimal) => {
 
   cliHandleUnhandled();
 
-  cliWelcome({
-    title: pkgJSON.name,
-    tagLine: `Hello!`,
-    description: pkgJSON.description,
-    version: pkgJSON.version,
-    bgColor: `#e3e6e8`,
-    color: `#000000`,
-    bold: true,
-    clear: true,
-  });
+  !minimal &&
+    cliWelcome({
+      title: pkgJSON.name,
+      tagLine: `Hello!`,
+      description: pkgJSON.description,
+      version: pkgJSON.version,
+      bgColor: `#e3e6e8`,
+      color: `#000000`,
+      bold: true,
+      clear: true,
+    });
+
+  minimal && console.log();
 
   cliCheckNode('12');
 }

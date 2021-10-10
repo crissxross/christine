@@ -14,19 +14,25 @@ const input = cli.input;
 const flags = cli.flags;
 
 (async () => {
-  init();
+  init(flags.minimal);
   input.includes('help') && cli.showHelp(0);
 
-  console.log(name);
-  console.log(bio);
+  flags.bio && console.log(name) && console.log(bio);
+  flags.social && console.log(social);
+  flags.ad && cliAlerts({type: `info`, msg: ad});
 
-  if (flags.social) {
-    console.log(social);
-  }
+  // if (flags.bio) {
+  //   console.log(name);
+  //   console.log(bio);
+  // }
 
-  if (flags.ad) {
-    cliAlerts({type: `info`, msg: ad});
-  }
+  // if (flags.social) {
+  //   console.log(social);
+  // }
+
+  // if (flags.ad) {
+  //   cliAlerts({type: `info`, msg: ad});
+  // }
 
   // debug info if needed
   debug(flags.debug, cli);
