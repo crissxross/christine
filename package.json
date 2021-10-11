@@ -13,6 +13,8 @@
     "christine-creates": "index.js"
   },
   "dependencies": {
+    "await-to-js": "^3.0.0",
+    "axios": "^0.22.0",
     "boxen": "^6.2.0",
     "chalk": "^4.1.2",
     "cli-alerts": "^1.2.2",
@@ -21,7 +23,9 @@
     "cli-handle-unhandled": "^1.1.1",
     "cli-welcome": "^2.2.2",
     "log-symbols": "^5.0.0",
-    "meow": "^10.1.1"
+    "meow": "^10.1.1",
+    "node-fetch": "^3.0.0",
+    "ora": "^6.0.1"
   },
   "keywords": [
     "christine wilks",
