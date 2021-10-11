@@ -14,10 +14,12 @@ const input = cli.input;
 const flags = cli.flags;
 
 (async () => {
+  // Init and help
   init(flags.minimal, flags.clear);
   input.includes('help') && cli.showHelp(0);
 
-  flags.bio && console.log(name) && console.log(bio);
+  // Print out the info
+  flags.bio && console.log(name), console.log(bio);
   flags.social && console.log(social);
   flags.ad && cliAlerts({type: `info`, msg: ad});
 
