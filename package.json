@@ -24,7 +24,6 @@
     "cli-welcome": "^2.2.2",
     "log-symbols": "^5.0.0",
     "meow": "^10.1.1",
-    "node-fetch": "^3.0.0",
     "ora": "^6.0.1"
   },
   "keywords": [
