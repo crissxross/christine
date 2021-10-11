@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import logSymbols from 'log-symbols';
+import boxen from 'boxen';
 import cliAlerts from 'cli-alerts';
 import cliHandleError from 'cli-handle-error';
 
@@ -19,7 +20,9 @@ const flags = cli.flags;
   input.includes('help') && cli.showHelp(0);
 
   // Print out the info
-  flags.bio && console.log(name), console.log(bio);
+  flags.bio &&
+    console.log(boxen(name, {padding: 1, dimBorder: true} )),
+    console.log(bio);
   flags.social && console.log(social);
   flags.ad && cliAlerts({type: `info`, msg: ad});
 
