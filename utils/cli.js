@@ -15,6 +15,7 @@ const helpText = `
     ${chalk.yellow(`--no-ad`)}       Don't print the ad info
     ${chalk.yellow(`--clear `)}      Clear the console ${chalk.dim(`(DEFAULT: true)`)}
     ${chalk.yellow(`--no-clear`)}    Don't clear the console
+    ${chalk.yellow(`-p, --minimal`)} Print blog posts
     ${chalk.yellow(`-m, --minimal`)} Print minimal info
     ${chalk.yellow(`-d, --debug`)}   Print debugging info
     ${chalk.yellow(`-v, --version`)} Print CLI version

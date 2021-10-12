@@ -17,10 +17,14 @@ const social = `
   ${githubClr(`GitHub`)}:  ${dim(`https://github.com/crissxross`)}
 `
 const ad = `Christine is creating an interactive narrative for Writing New Body Worlds`;
+const site = `crissxross.net`
+const blog = `Latest posts (from Ahmad Awais)`
 
 export {
   name,
   bio,
   social,
-  ad
+  ad,
+  site,
+  blog,
 }

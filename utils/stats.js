@@ -9,10 +9,12 @@ const apiURL = `https://api.github.com/users/crissxross`;
 
 const stats = async () => {
   spinner.start(`${chalk.yellow(`FOLLOWERS`)} fetching...`);
+
   const [error, res] = await to(axios.get(apiURL));
   cliHandleError(`API CALL FAILED`, error, true, true);
 
   const ghFollowers = res.data.followers;
+
   spinner.succeed(`${chalk.green(`FOLLOWERS`)} fetched`);
   // spinner.stop();
 

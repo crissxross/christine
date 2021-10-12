@@ -6,10 +6,11 @@ import cliAlerts from 'cli-alerts';
 import cliHandleError from 'cli-handle-error';
 
 import { init } from './utils/init.js';
-import { name, bio, social, ad } from './utils/data.js';
+import { name, bio, social, ad, blog, site } from './utils/data.js';
 import { cli } from './utils/cli.js';
 import { debug } from './utils/debug.js';
 import { stats } from './utils/stats.js';
+import { posts } from './utils/posts.js';
 
 
 const input = cli.input;
@@ -21,11 +22,13 @@ const flags = cli.flags;
   input.includes('help') && cli.showHelp(0);
 
   // Print out the info
-  flags.bio &&
-    console.log(boxen(name, {padding: 1, dimBorder: true} )),
-    console.log(bio);
-  flags.social && console.log(social);
   flags.ad && cliAlerts({type: `info`, msg: ad});
+  flags.bio &&
+  console.log(boxen(name, {padding: 1, dimBorder: true} )),
+  console.log(bio);
+  flags.social && console.log(social);
+  flags.posts && cliAlerts({type: `info`, msg: blog, name: site});
+  flags.posts && (await posts());
 
   // if (flags.bio) {
   //   console.log(name);
