@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import logSymbols from 'log-symbols';
 import boxen from 'boxen';
 import cliAlerts from 'cli-alerts';
 import enquirerPkg from 'enquirer';
@@ -22,18 +21,11 @@ const flags = cli.flags;
   init(flags.minimal, flags.clear);
   input.includes('help') && cli.showHelp(0);
 
-  const prompt = new Toggle({
-    message: 'Before proceeding, please respond:'
-  });
-  const response = await prompt.run();
-
-  console.log('response', response);
-
   // Print out the info
-  flags.ad && cliAlerts({type: `info`, msg: ad});
   flags.bio &&
   console.log(boxen(name, {padding: 1, dimBorder: true} )),
   console.log(bio);
+  flags.ad && cliAlerts({type: `info`, msg: ad});
   flags.social && console.log(social);
   flags.posts && cliAlerts({type: `info`, msg: blog, name: site});
   flags.posts && (await posts());
@@ -43,6 +35,14 @@ const flags = cli.flags;
 
   // debug info if needed
   debug(flags.debug, cli);
+
+  // Prompt example
+  const prompt = new Toggle({
+    message: 'Before proceeding, please respond:'
+  });
+  const response = await prompt.run();
+
+  console.log('response', response);
 
 })();
 
