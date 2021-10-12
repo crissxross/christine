@@ -23,6 +23,7 @@
     "cli-handle-unhandled": "^1.1.1",
     "cli-strip-html": "^1.0.2",
     "cli-welcome": "^2.2.2",
+    "enquirer": "^2.3.6",
     "log-symbols": "^5.0.0",
     "meow": "^10.1.1",
     "ora": "^6.0.1"
