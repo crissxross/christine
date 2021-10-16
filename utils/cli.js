@@ -1,5 +1,5 @@
 import meow from 'meow';
-import cliMeowHelp from 'cli-meow-help';
+import meowHelp from 'cli-meow-help';
 // import chalk from 'chalk';
 
 // FIXME: does not convert camelCase to kebab-case in the help print out
@@ -71,7 +71,7 @@ const commands = {
   }
 }
 
-const helpText = cliMeowHelp({
+const helpText = meowHelp({
   name: `npx christine-creates`,
   flags,
   commands,

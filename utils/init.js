@@ -1,7 +1,7 @@
 import { readFile } from 'fs/promises';
-import cliCheckNode from 'cli-check-node';
-import cliWelcome from 'cli-welcome';
-import cliHandleUnhandled from 'cli-handle-unhandled';
+import checkNode from 'cli-check-node';
+import welcome from 'cli-welcome';
+import handleUnhandled from 'cli-handle-unhandled';
 
 const pkgJSON = JSON.parse(
   await readFile(
@@ -11,10 +11,10 @@ const pkgJSON = JSON.parse(
 
 const init = (minimal, clear) => {
 
-  cliHandleUnhandled();
+  handleUnhandled();
 
   !minimal &&
-    cliWelcome({
+    welcome({
       title: pkgJSON.name,
       tagLine: `Hello!`,
       description: pkgJSON.description,
@@ -27,7 +27,7 @@ const init = (minimal, clear) => {
 
   minimal && console.log();
 
-  cliCheckNode('12');
+  checkNode('12');
 }
 
 export { init };

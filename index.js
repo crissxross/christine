@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import boxen from 'boxen';
-import cliAlerts from 'cli-alerts';
+import alert from 'cli-alerts';
 import enquirerPkg from 'enquirer';
 // because it's a CommonJS package
-const { prompt, Confirm, Toggle } = enquirerPkg;
+const { Toggle } = enquirerPkg;
 
 import { init } from './utils/init.js';
 import { name, bio, social, ad, blog, site } from './utils/data.js';
@@ -16,35 +16,33 @@ import { posts } from './utils/posts.js';
 const input = cli.input;
 const flags = cli.flags;
 
-(async () => {
-  // Init and help
-  init(flags.minimal, flags.clear);
-  input.includes('help') && cli.showHelp(0);
+// Init and help
+init(flags.minimal, flags.clear);
+input.includes('help') && cli.showHelp(0);
 
-  // Print out the info
-  flags.bio &&
-  console.log(boxen(name, {padding: 1, dimBorder: true} )),
-  console.log(bio);
-  flags.ad && cliAlerts({type: `info`, msg: ad});
-  flags.social && console.log(social);
-  flags.posts && cliAlerts({type: `info`, msg: blog, name: site});
-  flags.posts && (await posts());
+// Print out the info
+flags.bio &&
+console.log(boxen(name, {padding: 1, dimBorder: true} )),
+console.log(bio);
+flags.ad && alert({type: `info`, msg: ad});
+flags.social && console.log(social);
+flags.posts && alert({type: `info`, msg: blog, name: site});
+flags.posts && (await posts());
 
-  // stats
-  await stats();
+// stats
+await stats();
 
-  // debug info if needed
-  debug(flags.debug, cli);
+// debug info if needed
+debug(flags.debug, cli);
 
-  // Prompt example
-  const prompt = new Toggle({
-    message: 'Before proceeding, please respond:'
-  });
-  const response = await prompt.run();
+// Prompt example
+const prompt = new Toggle({
+  message: 'Before proceeding, please respond:'
+});
+const response = await prompt.run();
 
-  console.log('response', response);
+console.log('response', response);
 
-})();
 
 // NOTES:
 
