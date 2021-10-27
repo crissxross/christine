@@ -35,13 +35,13 @@ await stats();
 // debug info if needed
 debug(flags.debug, cli);
 
-// Prompt example
-const prompt = new Toggle({
-  message: 'Before proceeding, please respond:'
-});
-const response = await prompt.run();
+// PROMPT EXAMPLE - uncomment to run
+// const prompt = new Toggle({
+//   message: 'Before proceeding, please respond:'
+// });
+// const response = await prompt.run();
 
-console.log('response', response);
+// console.log('response', response);
 
 
 // NOTES:

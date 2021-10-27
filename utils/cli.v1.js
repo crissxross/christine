@@ -37,7 +37,7 @@ const options = {
     },
     clear: {
       type: 'boolean',
-      default: true,
+      default: false,
     },
     bio: {
       type: 'boolean',
